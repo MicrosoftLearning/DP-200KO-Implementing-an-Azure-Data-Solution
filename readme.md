@@ -1,35 +1,41 @@
-# INF99X: Sample Course
+﻿# DP-200-Azure 데이터 솔루션 구현
 
-- **[Download Latest Student Handbook and AllFiles Content](../../releases/latest)**
-- **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
-- **Need to manually build the lab instructions?** - Instructions are available in the [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) repository
+ 이 과정의 첫 번째 랩과 마지막 랩은 학생들이 수행할 랩에 대한 컨텍스트를 제공하는 데 도움이 되는 토론이 포함된 그룹 연습입니다. 마지막 랩은 학생이 랩의 사례 연구에서 제시된 요구 사항을 제공하기 위해 성취한 부분과 극복한 부분을 되돌아볼 수 있는 기회입니다. 나머지 랩은 AdventureWorks 비즈니스 요구 사항을 충족하기 위한 Azure 데이터 플랫폼 기능 구현하는 실습입니다.
 
-## What are we doing?
+다음은 각 모듈의 랩 목표를 요약한 것입니다.
 
-- To support this course, we will need to make frequent updates to the course content to keep it current with the Azure services used in the course.  We are publishing the lab instructions and lab files on GitHub to allow for open contributions between the course authors and MCTs to keep the content current with changes in the Azure platform.
+## 랩 1 - 데이터 엔지니어를 위한 Azure
 
-- We hope that this brings a sense of collaboration to the labs like we've never had before - when Azure changes and you find it first during a live delivery, go ahead and make an enhancement right in the lab source.  Help your fellow MCTs.
+학생들은 AdventureWorks 내 디지털 변환 프로젝트의 결과물 범위를 넓히기 위해 수업과 사례 연구에서 얻은 정보를 수집합니다. 학생들은 먼저 진화하는 데이터 사용이 조직에 새로운 기회를 제공한 방법을 파악하게 됩니다. 또한 학생들은 비즈니스 요구 사항을 해결하고 데이터 엔지니어가 수행할 작업을 정의하는 데 사용할 수 있는 Azure Data Platform 서비스에 대해서도 살펴봅니다. 마지막으로, 학생들은 AdventureWorks의 데이터 엔지니어링 결과물을 최종적으로 검토합니다.
 
-## How should I use these files relative to the released MOC files?
+## 랩 2 - 데이터 저장소 작업
 
-- The instructor handbook and PowerPoints are still going to be your primary source for teaching the course content.
+이 실습 과정에서는 학생이 주어진 비즈니스 및 기술 요구 사항에 대해 구현할 적절한 스토리지 유형을 결정할 수 있습니다. Azure 스토리지 계정 및 Data Lake Storage 계정을 만들고 Data Lake Storage 버전1과 버전2의 차이점을 설명할 수 있습니다. 또한 선택한 데이터 스토리지에 데이터 로드를 수행하는 방법을 시연할 수 있습니다.
 
-- These files on GitHub are designed to be used in conjunction with the student handbook, but are in GitHub as a central repository so MCTs and course authors can have a shared source for the latest lab files.
+## 랩 3 - Azure Databricks를 사용하여 팀 기반 데이터 과학 사용
 
-- It will be recommended that for every delivery, trainers check GitHub for any changes that may have been made to support the latest Azure services, and get the latest files for their delivery.
+이 실습이 끝나면 학생은 Azure Databricks를 사용하여 데이터 과학 프로젝트를 도울 수 있는 이유를 설명할 수 있습니다. 학생들은 Azure Databricks 인스턴스를 프로비전한 다음 Data Lake Store Gen II 저장소에서 간단한 데이터 준비 작업을 수행하는 데 사용할 작업 영역을 만듭니다. 마지막으로 학생은 Azure Databricks를 사용하여 변환을 수행하는 연습을 수행합니다.
 
-## What about changes to the student handbook?
+## 랩 4 - Cosmos DB를 사용하여 전역으로 분산되는 데이터베이스 작성
 
-- We will review the student handbook on a quarterly basis and update through the normal MOC release channels as needed.
+학생들은 Azure Cosmos DB가 조직에 가져올 수 있는 기능을 설명하고 시연할 수 있습니다. Cosmos DB 인스턴스를 만들고 포털과 .Net 애플리케이션을 통해 데이터를 업로드하고 쿼리하는 방법을 제시할 수 있습니다. 그런 다음 Cosmos DB 데이터베이스의 전역 규모를 활성화하는 방법을 시연할 수 있습니다.
 
-## How do I contribute?
+## 랩 5 - 클라우드에서 관계형 데이터 저장소 작업
 
-- Any MCT can submit a pull request to the code or content in the GitHub repro, Microsoft and the course author will triage and include content and lab code changes as needed.
+학생들은 Azure SQL Database 및 Azure SQL Data Warehouse를 프로비전하고 생성된 인스턴스 중 하나에 대해 쿼리를 발급할 수 있습니다. 또한 SQL Data Warehouse를 여러 다른 데이터 플랫폼 기술과 통합하고 PolyBase를 사용하여 한 데이터 원본의 데이터를 Azure SQL Data 웨어하우스로 로드할 수 있습니다.
 
-- You can submit bugs, changes, improvement and ideas.  Find a new Azure feature before we have?  Submit a new demo!
+## 랩 6 - Stream Analytics를 사용하여 실시간 분석 수행
 
-## Notes
+학생들은 데이터 스트림이 무엇인지, 이벤트 처리가 어떻게 이루어지는지 설명하고 AdventureWorks 사례 연구에 적합한 데이터 스트림 수집 기술을 선택할 수 있습니다. 선택한 수집 기술을 프로비전하고 이를 Stream Analytics와 통합하여 스트리밍 데이터와 함께 작동하는 솔루션을 만듭니다.
 
-### Classroom Materials
+## 랩 7 - Azure Data Factory를 사용하여 데이터 이동 오케스트레이션
 
-It is strongly recommended that MCTs and Partners access these materials and in turn, provide them separately to students.  Pointing students directly to GitHub to access Lab steps as part of an ongoing class will require them to access yet another UI as part of the course, contributing to a confusing experience for the student. An explanation to the student regarding why they are receiving separate Lab instructions can highlight the nature of an always-changing cloud-based interface and platform. Microsoft Learning support for accessing files on GitHub and support for navigation of the GitHub site is limited to MCTs teaching this course only.
+이 모듈에서 학생들은 다양한 데이터 플랫폼 기술의 데이터 이동을 오케스트레이션하는 데 Azure Data Factory를 사용하는 방법을 알아봅니다. 기술의 기능을 설명하고 SQL Database에서 데이터를 수집하여 SQL Data Warehouse에 데이터를 로드하는 엔드-엔드 데이터 파이프라인을 설정할 수 있습니다. 학생은 컴퓨팅 리소스를 호출하는 방법도 시연합니다.
+
+## 랩 8 - Azure 데이터 플랫폼 보호
+
+학생들은 심층 방어를 위해 취할 수 있는 다양한 보안 접근 방식을 설명하고 문서화할 수 있습니다. 여기에는 과정에서 지금까지 설정된 보안을 문서화하는 학생이 포함됩니다. 또한 학생들은 AdventureWorks에 존재할 수 있는 보안의 격차를 식별할 수 있습니다.
+
+## 랩 9 - 데이터 저장소/처리의 모니터링 및 문제 해결
+
+학생들은 데이터 부동산에서 발생할 수 있는 문제를 모니터링하는 데 도움이 되는 광범위한 모니터링 솔루션을 정의할 수 있습니다. 그런 다음 학생은 클라우드 데이터 솔루션에서 발생할 수 있는 일반적인 데이터 스토리지 문제 및 데이터 처리 문제를 경험하게 됩니다. 마지막으로 데이터 플랫폼 기술에 대한 재해 복구 접근 방식을 구현합니다.
