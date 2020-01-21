@@ -5,26 +5,26 @@ lab:
 ---
 
 # DP 200 - 데이터 플랫폼 솔루션 구현
-# 랩 3 - Azure Databricks를 사용하여 팀 기반 데이터 과학 사용
+# 랩 3 - Azure Databricks를 사용하여 팀 기반 데이터 과학 지원
 
 **예상 시간**: 75분
 
-**전제 조건**: 이 랩에 대한 사례 연구가 이미 밝혀졌던 것으로 가정합니다. 모듈 1의 콘텐츠 및 랩은 다음과 같은 것으로 가정합니다. 데이터 엔지니어용 Azure도 완료되었습니다.
+**필수 구성 요소**: 이 랩 관련 사례 연구의 내용을 확인했으며, 모듈 1: 데이터 엔지니어용 Azure의 랩과 내용도 확인했다고 가정합니다.
 
-**랩 파일**: 이 랩의 파일은 _Allfiles\Labfiles\Starter\DP-200.3_폴더에 위치해있습니다.
+**랩 파일**: 이 랩의 파일은 _Allfiles\Labfiles\Starter\DP-200.3_ 폴더에 있습니다.
 
 ## 랩 개요
 
-이 실습이 끝나면 학생은 Azure Databricks를 사용하여 데이터 과학 프로젝트를 도울 수 있는 이유를 설명할 수 있습니다. 학생들은 Azure Databricks 인스턴스를 프로비전한 다음 Data Lake Store Gen II 저장소에서 간단한 데이터 준비 작업을 수행하는 데 사용할 작업 영역을 만듭니다. 마지막으로 학생은 Azure Databricks를 사용하여 변환을 수행하는 연습을 수행합니다.
+이 랩이 끝나면 학생은 Azure Databricks를 사용하여 데이터 과학 프로젝트를 도울 수 있는 이유를 설명할 수 있습니다. 학생들은 Azure Databricks 인스턴스를 프로비전한 다음 Data Lake Store Gen II 저장소에서 간단한 데이터 준비 태스크를 수행하는 데 사용할 작업 영역을 만듭니다. 마지막으로 학생은 Azure Databricks를 사용하여 변환을 수행하는 연습을 수행합니다.
 
 ## 랩 목표
   
-이 랩을 완료하면 다음과 같은 것들을 수행할 수 있습니다.
+이 랩을 완료하면 다음 작업을 수행할 수 있습니다.
 
 1. Azure Databricks 설명
-1. Azure Databricks 작업
-1. Azure Databricks를 사용하여 데이터 읽기
-1. Azure Databricks를 사용하여 변환 수행
+1. Azure Databricks로 작업
+1. Azure Databricks로 데이터 읽기
+1. Azure Databricks로 변환 수행
 
 ## 시나리오
   
@@ -32,14 +32,14 @@ IS(정보 서비스) 부서에 응답하면 기술 사용의 이점을 나열하
 
 Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen II 계정의 데이터를 수집하여 서비스에 대한 간단한 데이터 준비 루틴을 수행하여 이 환경이 작동하는지 테스트합니다. 데이터 엔지니어는 데이터 과학자가 데이터 준비 연습을 수행하는 데 도움이 필요할 수 있음을 알려주고 있습니다. 이를 위해 기본 변환을 수행하는 데 도움이 되는 노트를 연습하는 것이 좋습니다.
 
-이 실습의 끝 부분에서는 다음을 수행할 수 있을 것입니다.
+이 랩을 마치면 다음 작업을 수행하는 방법을 배울 수 있습니다.
 
 1. Azure Databricks 설명
-1. Azure Databricks 작업
-1. Azure Databricks를 사용하여 데이터 읽기
-1. Azure Databricks를 사용하여 변환 수행
+1. Azure Databricks로 작업
+1. Azure Databricks로 데이터 읽기
+1. Azure Databricks로 변환 수행
 
-> **중요** 이 실습을 진행하면서 프로비저닝 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx에_있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
+> **중요**: 이 랩을 진행하면서 프로비저닝 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx에_있는 문서의 표에 기록합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
 
 ## 연습 1: Azure Databricks 설명
 
@@ -49,31 +49,31 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 개인 연습
   
-이 연습의 주요 작업은 다음과 같습니다.
+이 연습의 주요 태스크는 다음과 같습니다.
 
 1. 지금까지 이 과정에서 배운 내용에서 Azure Databricks가 충족할 디지털 변환 요구 사항과 Azure Databricks용 후보 데이터 원본을 식별합니다.
 
 1. 강사는 그룹과 결과에 대해 논의합니다.
 
-### 작업 1: 디지털 변환 및 후보 데이터 원본을 정의합니다.
+### 태스크 1: 디지털 변환 및 후보 데이터 원본을 정의합니다.
 
 1. 랩 가상 머신에서, **Microsoft Word** 를 시작하고up the file **Allfiles\Labfiles\Starter\DP-200.3** 폴더의 **DP-200-Lab03-Ex01.docx** 파일을 엽니다.
 
 1. **10분** 을 할애하여 이 랩의 사례 연구 및 시나리오에 설명된 대로 디지털 변환 요구 사항 및 후보 데이터 원본을 문서화합니다.
 
-### 작업 2: 강사와 조사 결과에 대해 토론합니다.
+### 태스크 2: 강사와 조사 결과에 대해 토론합니다.
 
 1. 강사는 결과를 논의하기 위해 그룹 토론을 중지합니다.
 
 > **결과**: 이 연습을 완료한 후 Azure Databricks가 충족할 디지털 변환 요구 사항과 후보 데이터 원본을 식별하는 Microsoft Word 문서를 만들었습니다.
 
-## 연습 2: Azure Databricks 작업
+## 연습 2: Azure Databricks로 작업
   
 예상 시간: 20분
 
 개인 연습
   
-이 연습의 주요 작업은 다음과 같습니다.
+이 연습의 주요 태스크는 다음과 같습니다.
 
 1. 리소스 그룹에서 Azure Databricks Premium 계층 인스턴스를 만듭니다.
 
@@ -81,7 +81,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 1. Databricks 작업 영역을 시작하고 Spark 클러스터를 만듭니다.
 
-### 작업 1: Azure Databricks 인스턴스를 만들고 구성합니다.
+### 태스크 1: Azure Databricks 인스턴스를 만들고 구성합니다.
 
 1. Azure Portal에서 **+ 리소스 생성** 블레이드를 탐색합니다.
 
@@ -109,7 +109,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
    > **참고**: 프로비전하는 데 약 3분이 소요됩니다. Databricks Runtime은 Apache Spark를 기반으로 구축되었으며 기본적으로 Azure 클라우드용으로 빌드되었습니다. Azure Databricks는 인프라 복잡성이 전혀 없고 데이터 인프라를 설정 및 구성하기 위한 전문 지식이 필요하지 않습니다. Azure Databricks는 프로덕션 작업의 성능을 중요하게 생각하는 데이터 엔지니어에게 I/O 계층 및 처리 계층(Databricks I/O)에서 다양한 최적화를 통해 더 빠르고 성능이 뛰어난 Spark 엔진을 제공합니다.
 
-### 작업 2: Azure Databricks를 엽니다.
+### 태스크 2: Azure Databricks를 엽니다.
 
 1. Azure Databricks 서비스가 만들어졌는지 확인합니다.
 
@@ -119,11 +119,11 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 1. **awrgstudxx** 블레이드에서 **awdbwsstudxx**(**xx** 는 이니셜)를 클릭하여 Azure Databricks를 엽니다. 그러면 Azure Databricks 인스턴스가 열립니다.
 
-### 작업 3: Databricks 작업 영역을 시작하고 Spark 클러스터를 만듭니다.
+### 태스크 3: Databricks 작업 영역을 시작하고 Spark 클러스터를 만듭니다.
 
-1. Azure Portal의 **awdbwsstudxx** 블레이드에서 **작업 영역 시작** 버튼을 클릭합니다.
+1. Azure Portal의 **awdbwsstudxx** 블레이드에서 **작업 영역 시작** 단추를 클릭합니다.
 
-    > **참고**: Microsoft Edge의 별도 탭에서 Azure Databricks 작업 영역에 로그인됩니다.
+    > **참고**: Microsoft Edge의 새 탭에서 Azure Databricks 작업 영역에 로그인됩니다.
 
 1. **일반 작업** 아래에서 **새 클러스터** 를 클릭합니다.
 
@@ -137,7 +137,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
     - Python 버전: **3**
 
-    - **60분** 동안 활동이 없으면 종료 확인란을 선택했는지 확인합니다. 클러스터를 사용하지 않는 경우 클러스터를 종료하는 기간(분)을 제공합니다.
+    - **60분** 동안 활동이 없으면 종료 확인란을 선택했는지 확인합니다. 클러스터를 사용 중이지 않은 경우 클러스터를 종료할 시간(분)을 입력합니다.
 
     - 나머지 옵션은 모두 현재 설정으로 둡니다.
 
@@ -147,51 +147,51 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 > **참고**: 클러스터가 만들어지는 동안 **뒤로 돌아가 연습 1을 수행** 합니다.
 
-## 연습 3: Azure Databricks를 사용하여 데이터 읽기
+## 연습 3: Azure Databricks로 데이터 읽기
 
 예상 시간: 30분
 
 개인 연습
 
-이 연습의 주요 작업은 다음과 같습니다.
+이 연습의 주요 태스크는 다음과 같습니다.
 
 1. Databricks 클러스터가 만들어졌는지 확인합니다.
 
 1. Azure Data Lake Store Gen II 계정 이름 수집
 
-1. Databricks 인스턴스를 사용하여 Data Lake Store Gen II 저장소에 액세스할 수 있습니다.
+1. Databricks 인스턴스를 사용하여 Data Lake Gen II Store에 액세스할 수 있습니다.
 
-1. Databricks 노트를 만들고 데이터 레이크 저장소에 연결합니다.
+1. Databricks Notebook을 만들고 Data Lake Store에 연결합니다.
 
 1. Azure Databricks에서 데이터를 읽습니다.
 
-### 작업 1: Databricks 클러스터 생성 확인
+### 태스크 1: Databricks 클러스터 생성 확인
 
 1. Microsoft Edge로 돌아가 **상호 작용 클러스터**에서 **awdbclstudxx**(**xx** 는 이니셜)라는 클러스터의 상태가 실행 중인지 확인합니다.
 
-### 작업 2: Azure Data Lake Store Gen II 계정 이름 수집
+### 태스크 2: Azure Data Lake Store Gen II 계정 이름 수집
 
 1. Microsoft Edge에서 Azure Portal 탭을 클릭하고 **리소스 그룹**, **awrgstudxx**, **awdlsstudxx** 를 차례로 클릭합니다. 여기서 **xx** 는 이니셜입니다.
 
 1. **awdlsstudxx** 블레이드에서 **액세스 키** 를 클릭한 다음 **스토리지 계정 이름** 옆에 있는 복사 아이콘을 클릭하여 메모장에 붙여 넣습니다. 
 
-### 작업 3: Databricks 인스턴스를 사용하여 Data Lake Gen II 저장소에 액세스할 수 있습니다.
+### 태스크 3: Databricks 인스턴스를 사용하여 Data Lake Gen II Store에 액세스할 수 있습니다.
 
 1. Microsoft Edge에서 Azure Porta 탭을 클릭하고 블레이드에서 **Azure Active Directory** 를 클릭합니다.
 
 1. **개요** 블레이드에서 **앱 등록** 을 클릭합니다.
 
-1. **앱 등록** 화면에서 **+ 새 애플리케이션 등록** 버튼을 클릭합니다.
+1. **앱 등록** 화면에서 **+ 새 애플리케이션 등록** 단추를 클릭합니다.
 
-1. 애플리케이션에 대해 **이름** 으로 **DLAccess**, **URL** 로 **https://adventureworks.org/exampleapp** 을 입력합니다. 만들려는 애플리케이션 유형에 **웹 앱/API** 를 선택합니다. 값을 설정한 후 **만들기** 를 선택합니다. DLAccess 화면이 나타납니다. 
+1. 애플리케이션 등록 화면에서 **이름** 을 **DLAccess** 로 입력하고 **리디렉션 URI(선택 사항)** 섹션에서 **웹** 이 선택되어 있는지 확인한 후에 애플리케이션 값으로 **https://adventure-works.com/exampleapp** 을 입력합니다. 값을 설정한 후 **등록** 을 선택합니다. DLAccess 화면이 나타납니다.
 
-1. **DLAccess** 등록된 앱 화면에서 **애플리케이션 ID** 를 복사하고 메모장에 붙여 넣습니다.
+1. **DLAccess** 등록된 앱 화면에서 **애플리케이션 ID**와 **테넌트 ID**를 복사하여 메모장에 붙여넣습니다.
 
-1. **DLAccess** 등록된 앱 화면에서 **설정** 버튼을 클릭한 다음 **키** 옵션을 클릭합니다.
+1. **DLAccess** 등록된 앱 화면에서 **인증서 및 암호**를 클릭하고 **+새 클라이언트 암호**를 클릭합니다.
 
 1. 키에 대해 **설명**에 **DL 액세스 키** 를 입력하고 **기간** 을 **1년 후** 로 지정합니다. 완료되면 **저장** 을 클릭합니다.
 
-    >**중요** 저장을 클릭하면 키가 나타납니다. 이 키 값을 복사할 수 있는 기회는 한 번만 있습니다.
+    >**중요** 저장을 클릭하면 키가 나타납니다. 이 키 값은 메모장에 한 번만 복사할 수 있습니다.
 
 1. **애플리케이션 키 값** 을 복사하여 메모장에 붙여 넣습니다.
 
@@ -211,11 +211,11 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 1. Azure Active Directory 블레이드에서 **속성**을 클릭합니다.
 
-1. **디렉터리 ID** 옆에 있는 복사 아이콘을 클릭하여 테넌트 ID를 얻고 메모장에 붙여 넣습니다.
+1. **디렉터리 ID** 옆에 있는 복사 아이콘을 클릭하여 테넌트 ID를 복사한 다음 메모장에 붙여넣습니다.
 
 1. 매모장 문서를 **Allfiles\Labfiles\Starter\DP-200.3** 폴더에 **DatabricksDetails.txt** 로 저장합니다.
 
-### 작업 4: Databricks Notebook를 만들고 데이터 레이크 저장소에 연결합니다.
+### 태스크 4: Databricks Notebook을 만들고 Data Lake Store에 연결합니다.
 
 1. Microsoft Edge에서 **클러스터 - Databricks** 탭을 클릭합니다.
 
@@ -247,9 +247,9 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 1. Notebook의 **Cmd 1** 셀에서, **실행** 아이콘을 클릭하고 **실행 셀** 을 클릭합니다. 
 
-    >**참고** 셀 하단에 다음과 같은 메시지가 반환됩니다. "Command took 0.0X seconds -- by person at 4/4/2019, 2:46:48 PM on awdbclstudxx"
+    >**참고** 셀 아래쪽에 "Command took 0.0X seconds -- by person at 4/4/2019, 2:46:48 PM on awdbclstudxx" 메시지가 반환됩니다.
 
-### 작업 5: Azure Databricks에서 데이터를 읽습니다.
+### 태스크 5: Azure Databricks에서 데이터를 읽습니다.
 
 1. 노트에서 셀 **Cmd 1** 의 하단에 마우스를 가져가서 **+** 아이콘을 클릭합니다. **Cmd2라는** 새 셀이 나타납니다.
 
@@ -265,9 +265,9 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 1. 노트의 **Cmd 2** 셀에서, **실행** 아이콘을 클릭하고 **실행 셀** 을 클릭합니다. 
 
-    >**참고** 셀 하단에 다음과 같은 메시지가 표시됩니다. Spark job has executed 및 "Command took 0.0X seconds -- by person at 4/4/2019, 2:46:48 PM on awdbclstudxx"
+    >**참고** 셀 아래쪽에 Spartk 작업이 실행되었다는 알림과 "Command took 0.0X seconds -- by person at 4/4/2019, 2:46:48 PM on awdbclstudxx" 메시지가 반환됩니다.
 
-1. 노트에서 셀 **Cmd 2** 의 하단에 마우스를 가져 가서 **+** 아이콘을 클릭합니다. **Cmd3** 라는 새 셀이 나타납니다.
+1. 메모장에서 **Cmd 2** 셀 아래쪽을 마우스로 가리키고 **+** 아이콘을 클릭합니다. **Cmd3**라는 새 셀이 나타납니다.
 
 1. 노트의 **Cmd 3** 셀에서, 다음 코드를 복사하여 다음 셀에 붙여넣습니다.
 
@@ -291,7 +291,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 개인 연습
 
-이 연습의 주요 작업은 다음과 같습니다.
+이 연습의 주요 태스크는 다음과 같습니다.
 
 1. 데이터 집합에서 특정 열 검색
 
@@ -301,7 +301,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 1. 시간이 허락할 경우: 추가 변환
 
-### 작업 1: 데이터 집합에서 특정 열 검색
+### 태스크 1: 데이터 집합에서 특정 열 검색
 
 1. 노트에서 셀 **Cmd 3** 의 하단에 마우스를 가져 가서 **+** 아이콘을 클릭합니다. **Cmd4** 라는 새 셀이 나타납니다.
 
@@ -318,7 +318,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
     >**참고** Spark 작업이 실행되고 결과 테이블이 반환되며 "명령이 0.0X초가 걸렸으며 2019년 4월 4일 오후 2:46:48초에 awdbclstudxx에서 사람이 보낸 메시지가 셀 하단에 반환됩니다."
 
-### 작업 2: 데이터 집합에서 열 이름 변경 수행
+### 태스크 2: 데이터 집합에서 열 이름 변경 수행
 
 1. 노트에서 셀 **Cmd 4** 의 하단에 마우스를 가져 가서 **+** 아이콘을 클릭합니다. **Cmd5** 라는 새 셀이 나타납니다.
 
@@ -335,7 +335,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
     >**참고** Spark 작업이 실행되고 결과 테이블이 반환되며 "명령이 0.0X초가 걸렸으며 2019년 4월 4일 오후 2:46:48초에 awdbclstudxx에서 사람이 보낸 메시지가 셀 하단에 반환됩니다."
 
-### 작업 3: 주석 추가
+### 태스크 3: 주석 추가
 
 1. 노트에서 셀 **Cmd 5** 의 하단에 마우스를 가져 가서 **+** 아이콘을 클릭합니다. **Cmd6** 라는 새 셀이 나타납니다.
 
@@ -353,7 +353,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen I
 
 > **결과**: 이 연습을 완료한 후 AdventureWorks의 데이터 과학자가 사용할 수 있는 두 개의 웹로그 파일이 들어 있는 파일 시스템을 가진 Awdlsstudx라는 Data Lake Gen II 스토리지 계정을 생성했습니다.
 
-### 작업 4: 시간이 허락할 경우 또는 과정 복습
+### 태스크 4: 시간이 허락할 경우 또는 과정 복습
 
 이 랩을 일찍 완료한 경우 다음 섹션에서 Azure의 기본 및 고급 변환에 대해 자세히 알아보는 데 도움이 되는 콘텐츠에 대한 링크를 제공합니다.
 

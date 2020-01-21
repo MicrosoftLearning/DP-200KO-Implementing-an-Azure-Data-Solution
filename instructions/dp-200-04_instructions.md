@@ -5,13 +5,13 @@ lab:
 ---
 
 # DP 200 - 데이터 플랫폼 솔루션 구현
-# 랩 4 - Cosmos DB를 사용하여 전역으로 분산되는 데이터베이스 작성
+# 랩 4 - Cosmos DB를 사용하여 전 세계에 분산된 데이터베이스 구축
 
 **예상 시간**: 90분
 
-**전제 조건**: 이 랩에 대한 사례 연구가 이미 밝혀졌던 것으로 가정합니다. 모듈 1의 콘텐츠 및 랩은 다음과 같은 것으로 가정합니다. 데이터 엔지니어용 Azure도 완료되었습니다.
+**필수 구성 요소**: 이 랩 관련 사례 연구의 내용을 확인했으며, 모듈 1: 데이터 엔지니어용 Azure의 랩과 내용도 확인했다고 가정합니다.
 
-**랩 파일**: 이 랩의 파일은 _Allfiles\Labfiles\Starter\DP-200.4_폴더에 위치해있습니다.
+**랩 파일**: 이 랩의 파일은 _Allfiles\Labfiles\Starter\DP-200.4_ 폴더에 있습니다.
 
 ## 랩 개요
 
@@ -19,12 +19,12 @@ lab:
 
 ## 랩 목표
   
-이 랩을 완료하면 다음과 같은 것들을 수행할 수 있습니다.
+이 랩을 완료하면 다음 작업을 수행할 수 있습니다.
 
-1. 확장이 용이한 Azure Cosmos DB 데이터베이스 만들기
-1. Azure Cosmos DB 데이터베이스의 데이터 삽입 및 쿼리
-1. Visual Studio Code에서 Azure Cosmos DB용 .NET Core 앱 구축
-1. Azure Cosmos DB를 사용하여 전역으로 데이터 분산
+1. 확장하도록 구축된 Azure Cosmos DB 데이터베이스 만들기
+1. Azure Cosmos DB 데이터베이스에 데이터 삽입 및 쿼리
+1. Azure Cosmos DB를 사용하여 데이터를 전 세계에 배포
+1. (선택 사항) Visual Studio Code에서 Azure Cosmos DB용 .NET Core 앱 빌드
 
 ## 시나리오
   
@@ -32,26 +32,26 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 정보 서비스 부서는 서비스를 설정하는 방법과 데이터를 업로드하는 방법을 이해하려고 합니다. 개발자는 Cosmos에 데이터를 업로드하는 데 사용할 수 있는 애플리케이션의 예를 보고 싶어합니다. 둘 다 행성 규모의 주장을 충족할 수 있는 방법을 이해하고 싶어합니다.
 
-이 실습의 끝 부분에서는 다음을 수행할 수 있을 것입니다.
+이 랩을 마치면 다음 작업을 수행하는 방법을 배울 수 있습니다.
 
-1. 확장이 용이한 Azure Cosmos DB 데이터베이스 만들기
-1. Azure Cosmos DB 데이터베이스의 데이터 삽입 및 쿼리
-1. Visual Studio Code에서 Azure Cosmos DB용 .NET Core 앱 구축
-1. Azure Cosmos DB를 사용하여 전역으로 데이터 분산
+1. 확장하도록 구축된 Azure Cosmos DB 데이터베이스 만들기
+1. Azure Cosmos DB 데이터베이스에 데이터 삽입 및 쿼리
+1. Azure Cosmos DB를 사용하여 데이터를 전 세계에 배포
+1. (선택 사항) Visual Studio Code에서 Azure Cosmos DB용 .NET Core 앱 빌드
 
-> **중요** 이 실습을 진행하면서 프로비저닝 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx에_있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
+> **중요**: 이 랩을 진행하면서 프로비저닝 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx에_있는 문서의 표에 기록합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
 
-## 연습 1: 확장이 용이한 Azure Cosmos DB 데이터베이스 만들기
+## 연습 1: 확장하도록 구축된 Azure Cosmos DB 데이터베이스 만들기
 
 예상 시간: 10분
 
 개인 연습
   
-이 연습의 주요 작업은 다음과 같습니다.
+이 연습의 주요 태스크는 다음과 같습니다.
 
 1. Azure Cosmos DB 인스턴스 만들기
 
-### 작업 1: Azure Cosmos DB 인스턴스 만들기
+### 태스크 1: Azure Cosmos DB 인스턴스 만들기
 
 1. Azure Portal에서 **+ 리소스 생성** 블레이드를 탐색합니다.
 
@@ -73,21 +73,21 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. **Azure Cosmos DB 계정 만들기** 블레이드에서 **검토 + 만들기** 를 클릭합니다.
 
-1. **Azure Cosmos DB 계정 만들기*** 블레이드를 유효성 검사한 후 **만들기** 를 클릭합니다.
+1. **Azure Cosmos DB 계정 만들기** 블레이드에서 유효성 검사를 완료한 후에 **만들기**를 클릭합니다.
 
-   > **참고**: 프로비전하는 데 약 5분이 소요됩니다. 이러한 랩에서 자주 건너뛰는 것은 Azure에서 서비스를 프로비전할 때 추가 탭에 대한 설명입니다. 프로비저닝 화면에 네트워크, 태그, 고급과 같은 추가 탭이 있습니다. 이를 사용하여 서비스에 대한 사용자 지정 설정을 정의할 수 있습니다. 예를 들어 여러 서비스의 네트워크 탭을 사용하면 가상 네트워크 구성을 정의할 수 있으므로 지정된 데이터 서비스에 대한 네트워크 트래픽을 제어하고 보호할 수 있습니다. 태그 옵션은 여러 리소스 및 리소스 그룹에 동일한 태그를 적용하여 리소스를 분류하고 통합 청구를 볼 수 있는 이름/값 쌍입니다. 고급 탭은 탭이 표시되는 서비스에 따라 다릅니다. 그러나 이러한 영역을 제어할 수 있으며 네트워크 관리자 또는 재무 부서와 협력하여 이러한 옵션을 구성하는 방법을 알아보려는 것이 중요합니다.
+   > **참고**: 프로비전하는 데 약 5분이 소요됩니다. 이러한 랩에서 자주 건너뛰는 것은 Azure에서 서비스를 프로비전할 때 추가 탭에 대한 설명입니다. 프로비저닝 화면에 네트워크, 태그, 고급과 같은 추가 탭이 있습니다. 이를 사용하여 서비스에 대한 사용자 지정 설정을 정의할 수 있습니다. 예를 들어 여러 서비스의 네트워크 탭을 사용하면 가상 네트워크 구성을 정의할 수 있으므로 지정된 데이터 서비스에 대한 네트워크 트래픽을 제어하고 보호할 수 있습니다. 태그 옵션은 여러 리소스 및 리소스 그룹에 같은 태그를 적용하여 리소스를 분류하고 통합 청구 정보를 확인하는 데 사용할 수 있는 이름/값 쌍입니다. 고급 탭은 탭이 표시되는 서비스에 따라 다릅니다. 그러나 이러한 영역은 제어할 수 있으며, 네트워크 관리자나 경리부와의 공동 작업을 통해 이러한 옵션을 구성해야 하는 방법을 파악할 수 있습니다.
 
 1. 프로비저닝이 완료되면 "배포가 완료됨" 화면이 나타납니다. **리소스로 이동** 을 클릭하고 다음 연습으로 이동합니다.  
 
 >**결과** 이 연습에서 Azure Cosmos DB 계정을 프로비전했습니다.
 
-## 연습 2: Azure Cosmos DB 데이터베이스의 데이터 삽입 및 쿼리
+## 연습 2: Azure Cosmos DB 데이터베이스에 데이터 삽입 및 쿼리
   
 예상 시간: 20분
 
 개인 연습
   
-이 연습의 주요 작업은 다음과 같습니다.
+이 연습의 주요 태스크는 다음과 같습니다.
 
 1. Azure Cosmos DB 데이터베이스 및 컬렉션 설정
 
@@ -97,29 +97,31 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. 데이터에 대한 복잡한 작업 실행
 
-### 작업 1: Azure Cosmos DB 데이터베이스 및 컬렉션 설정
+### 태스크 1: Azure Cosmos DB 데이터베이스 및 컬렉션 설정
 
 1. Azure Portal에서 **awcdbstudxx - 빠른 시작** 화면의 블레이드에서 **개요** 옵션을 클릭합니다.
 
-1. **awcdbstudxx** 화면에서 **+ 컬렉션 추가** 를 클릭합니다. 그러면 **컬렉션 추가** 화면이 있는 **Data Explorer** 가 열립니다.
+1. **awcdbstudxx** 화면에서 **+ 컨테이너 추가**를 클릭합니다. 그러면 **awcdbstudxx Data Explorer** 블레이드와 **SQL API** 블레이드가 열립니다.
 
-1. **컬렉션 추가** 화면에서 다음 설정을 사용하여 Clothing라는 컬렉션이 있는 Products 데이터베이스를 만듭니다.
+1. **SQL API** 블레이드 위의 **새 컨테이너** 화면을 클릭하고 다음 설정을 사용하여 Clothing 컨테이너가 포함된 Products 데이터베이스를 만듭니다.
 
     - 데이터베이스 ID: **Products**
+    
+    - 처리량:  **400**
 
-    - 구독:  **Clothing**
+    - 컨테이너 ID:  **Clothing**
 
-    - Partition key: **/productId**
+    - 파티션 키: **/productId**
 
     - 나머지 옵션은 기본값으로 둡니다.
 
-1.**컬렉션 추가 화면** 에서 **확인** 을 클릭합니다.
+1.**컨테이너 추가** 화면에서 **확인**을 클릭합니다.
 
-### 작업 2: 포털을 사용하여 데이터 추가
+### 태스크 2: 포털을 사용하여 데이터 추가
 
-1. **awcdbstudcto - Data Explorer** 화면에서 새 컬렉션 버튼 맞은 편에 있는 Data Explorer 도구 모음에서 **전체 화면 열기** 버튼을 클릭합니다. 전체 화면 열기 대화 상자에서 **열기** 를 클릭합니다. Microsoft Edge에서 새 탭이 열립니다.
+1. **awcdbstudcto - Data Explorer** 화면의 새 컬렉션 단추 반대쪽에 있는 Data Explorer 도구 모음에서 **전체 화면 열기** 단추를 클릭합니다. 전체 화면 열기 대화 상자에서 **열기**를 클릭합니다. Microsoft Edge에서 새 탭이 열립니다.
 
-1. **SQL API** 창에서 **Clothing** 을 확장하고 **문서** 를 클릭합니다. 이제 대체할 샘플 JSON과 함께 새 문서가 나타납니다.
+1. **SQL API** 창에서 **Clothing**을 확장하고 **항목**을 클릭합니다. 그러면 새 문서와 샘플 JSON이 표시됩니다. 이 JSON은 아래와 같이 바꿀 것입니다.
 
 1. 문서 창에서 **새 문서** 의 아이콘을 클릭합니다.
 
@@ -171,15 +173,15 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. 문서 탭에 JSON을 추가한 후 **저장** 을 클릭합니다.
 
-1. 왼쪽 메뉴의 각 문서를 클릭하여 저장한 각 문서를 볼 수 있습니다.
+1. 왼쪽 메뉴에서 각 문서를 클릭하면 저장한 각 문서를 확인할 수 있습니다. ID가 1인 첫 번째 항목의 값은 **33218896**이고 두 번째 항목의 값은 **33218897**입니다.
 
-### 작업 3: Azure Portal에서 쿼리를 실행합니다.
+### 태스크 3: Azure Portal에서 쿼리 실행
 
-1. Azure Portal의 **문서** 화면에서 **새 SQL 쿼리** 버튼을 클릭합니다.
+1. Azure Portal의 **항목** 화면에서 **SQL API** 블레이드 위의 **새 SQL 쿼리** 단추를 클릭합니다.
 
-    > **참고**: 쿼리 **SELECT * FROM c** 를 표시하는 쿼리 1 화면이 나타납니다.
+    > **참고**: **SELECT * FROM c** 쿼리가 표시된 쿼리 1 화면 탭이 나타납니다.
 
-1. productId 1에 대한 세부 정보를 표시하는 JSON 파일을 반환하는 쿼리를 작성합니다.
+1. productId 1의 세부 정보를 보여 주는 JSON 파일을 반환하는 쿼리를 작성합니다.
 
     ```SQL
     SELECT *
@@ -215,7 +217,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     ]
     ```
 
-1. 기존 쿼리 창에서. productId에 대한 JSON 파일에 ID, 제조업체 및 설명을 반환하는 쿼리를 작성합니다. 
+1. 기존 쿼리 창에서 productId의 ID, 제조업체 및 설명을 JSON 파일에 반환하는 쿼리를 작성합니다. 
 
     ```SQL
     SELECT
@@ -263,9 +265,9 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     ]
     ```
 
-### 작업 4: 데이터에 대한 복잡한 작업 실행
+### 태스크 4: 데이터에 대한 복잡한 작업 실행
 
-1. Azure Portal의 **문서** 화면에서 **새 저장 프로시저** 버튼을 클릭합니다.
+1. Azure Portal의 **항목** 화면에서 **새 저장 프로시저** 단추를 클릭합니다.
 
     > **참고**: 샘플 저장 프로시저를 보여 주는 새 저장 프로시저 화면이 나타납니다.
 
@@ -299,7 +301,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. 새 저장 프로시저 화면에서 **실행** 을 클릭합니다.
 
-1. 입력 매개 변수 화면에서 **파티션 키 값** 텍스트 상자에 **33218898** 을 입력한 다음 **실행** 을 클릭합니다
+1. 입력 매개 변수 화면의 **파티션 키 값** 텍스트 상자에서 **유형**을 **문자열**로, **값**을 **33218898**로 설정하고 **실행**을 클릭합니다.
 
 다음 결과가 반환됩니다.
 
@@ -316,7 +318,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     }
     ```
 
-1. Azure Portal의 **문서** 화면에서 드롭다운 버튼 **새 저장 프로시저** 를 클릭하고 **새 UDF** 를 클릭합니다.
+1. Azure Portal의 **항목** 화면에서 **새 저장 프로시저** 드롭다운 단추를 클릭하고 **새 UDF**를 클릭합니다.
 
     > **참고**: **function userDefinedFunction(){}** 을 보여 주는 새 UDF 1 화면이 표시됩니다.
 
@@ -375,13 +377,55 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     ]
     ```
 
-## 연습 3: Visual Studio Code에서 Azure Cosmos DB용 .NET Core 앱 구축
+## 연습 3: Azure Cosmos DB를 사용하여 데이터를 전 세계에 배포
+
+예상 시간: 15분
+
+개인 연습
+
+이 연습의 주요 태스크는 다음과 같습니다.
+
+1. 여러 지역으로 데이터 복제
+
+1. 장애 조치(failover) 관리
+
+### 태스크 1: 여러 지역으로 데이터 복제
+
+1. Microsoft Edge에서 **Data Explorer - Microsoft..** 탭을 클릭합니다.
+
+1. "연결 오류"라는 메시지가 나타나면 **새로 고침** 단추를 클릭합니다.
+
+1. **awcdbstudxx - Data Explorer**창에서 **전역으로 데이터 복제**를 클릭합니다.
+
+1. 세계 지도에서 거주 중인 대륙 내의 데이터 센터 위치를 하나 한 번 클릭하고 **저장**을 클릭합니다.
+
+>**참고**: 추가 데이터 센터의 프로비저닝에는 약 7분이 걸립니다.
+
+### 태스크 2: 장애 조치(failover) 관리.
+
+1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **수동 장애 조치(failover)** 를 클릭합니다.
+
+1. **읽기 영역** 데이터 센터 위치를 클릭하고 **확인** 을 클릭합니다.
+
+>**참고** 수동 장애 조치(Failover)는 약 3분 정도 걸립니다.
+
+1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **자동 장애 조치(failover)** 를 클릭합니다
+
+1. "자동 장애 조치(failover)" 화면에서 **켜기** 단추를 클릭한 다음 **확인** 을 클릭합니다.
+
+>**참고** 자동 장애 조치(failover)의 프로비저닝에는 약 3분이 걸립니다.
+
+## 시간이 되면
+
+> **참고**: 랩의 이 부분까지 완료한 후에 시간이 되면 강사에게 연습 4를 진행할 수 있는지 문의하세요. 이 연습은 Cosmos DB를 사용하여 애플리케이션을 빌드하는 예제로, DP200 시험 응시를 위한 필수 연습은 아닙니다. 이 랩에서는 사용 가능한 빌드 방법을 설명합니다.
+
+## 연습 4: Visual Studio Code에서 Azure Cosmos DB용 .NET Core 앱 빌드
 
 예상 시간: 45분
 
 개인 연습
 
-이 연습의 주요 작업은 다음과 같습니다.
+이 연습의 주요 태스크는 다음과 같습니다.
 
 1. Visual Studio Code에서 Azure Cosmos DB 리소스 사용
 
@@ -393,11 +437,11 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. 애플리케이션에서 저장 프로시저 만들기 및 실행
 
-### 작업 1: Visual Studio Code에서 Azure Cosmos DB 리소스 사용
+### 태스크 1: Visual Studio Code에서 Azure Cosmos DB 리소스 사용
 
 1. Visual Studio Code를 엽니다.
 
-1. 왼쪽 메뉴에서 확장 버튼을 클릭합니다.
+1. 왼쪽 메뉴에서 확장 단추를 클릭합니다.
 
 1. Marketplace 텍스트 상자의 확장 검색에서 **Cosmos DB** 를 입력한 다음 **Azure Cosmos DB** 를 클릭합니다. 문서가 Visual Studio Code에 나타나면 **설치** 를 클릭합니다.
 
@@ -411,7 +455,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. 설치가 완료되면 **다시 로드** 를 클릭합니다.
 
-1. Visual Studio Code에서 **View**, **명령 팔레트** 를 클릭하고 **Azure:** 를 입력합니다.**로그인합니다**.
+1. Visual Studio Code에서 **View**, **명령 팔레트** 를 클릭하고 **Azure: Sign In** 을 입력하여 Azure에 로그인합니다.
 
     > **참고**: 웹 브라우저의 프롬프트에 따라 Visual Studio Code 세션을 인증하는 계정을 선택합니다. 브라우저에 로그인되었다는 확인 메시지가 표시됩니다. 이 탭은 닫을 수 있습니다.
 
@@ -445,13 +489,13 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. Azure: Cosmos DB 창에서 계정을 확장합니다. 그러면 새 Users 데이터베이스 및 WebCustomers 컬렉션이 표시됩니다.
 
-### 작업 2: Visual Studio Code에서 애플리케이션 설정
+### 태스크 2: Visual Studio Code에서 애플리케이션 설정
 
 1. **파일** 메뉴를 클릭하고 비어 있는 경우 **자동 저장** 을 선택하여 파일 자동 저장을 사용하도록 설정합니다. 여러 코드 블록으로 복사할 수 있으며 이렇게 하면 파일의 최신 편집에 대해 항상 작동할 수 있습니다.
 
 1. 주 메뉴에서 **보기**, **터미널** 을 선택하여 Visual Studio Code에서 통합 터미널을 엽니다.
 
-1. 터미널 창을 클릭하고 키보드에서 **Enter** 를 누른 다음, 다음 명령을 복사하여 붙여 넣습니다.
+1. 터미널 창을 클릭하고 키보드에서 **Enter** 키를 누른 후에 아래 명령을 복사하여 붙여넣습니다.
 
     ```bash
     dotnet new console
@@ -492,7 +536,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     using Newtonsoft.Json;
     ```
 
-> **중요** 약 15초간 기다리다 누락된 필수 자산을 추가하는 데 대한 메시지가 나오면 **예** 를 클릭합니다.
+> **중요**: 약 15초간 기다리다 누락된 필수 자산을 추가하는 데 대한 메시지가 나오면 **예**를 클릭합니다.
 
 1. learning-module 폴더에서 **App.config** 라는 새 파일을 만들고 다음 코드를 추가합니다.
 
@@ -538,7 +582,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     private DocumentClient client;
     ```
 
-1. 새 비동기 작업을 추가하여 새 클라이언트를 만들고 Main 메서드 다음에 다음 메서드를 추가하여 Users 데이터베이스가 있는지 확인합니다.
+1. 새 클라이언트를 만드는 비동기 태스크를 새로 추가하고, Main 메서드 다음에 아래 메서드를 추가하여 Users 데이터베이스가 있는지 확인합니다.
 
     ```C#
     private async Task BasicOperations()
@@ -559,7 +603,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     dotnet run
     ```
 
-1. 다음 코드를 복사하여 Main 메서드에 붙여 넣어 현재 **Console.WriteLine("Hello World!");** 코드를 덮어씁니다.
+1. 다음 코드를 복사한 다음 Main 메서드에 붙여넣어 현재 **Console.WriteLine("Hello World!");** 코드를 덮어씁니다.
 
     ```C#
     try
@@ -584,7 +628,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     }
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -599,13 +643,13 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 >**결과** 이 연습에서 Azure Cosmos DB에 연결할 수 있는 클라이언트 측 애플리케이션을 만들었습니다.
 
-### 작업 3: 프로그래밍 방식으로 NoSQL 데이터 생성, 읽기, 업데이트 및 삭제
+### 태스크 3: 프로그래밍 방식으로 NoSQL 데이터 생성, 읽기, 업데이트 및 삭제
 
 #### 문서 만들기
 
 1. Azure Cosmos DB에 저장할 개체를 나타내는 **User** 클래스를 만듭니다. 또한 **사용자** 내에서 사용되는 **OrderHistory 및 ShippingPreference** 클래스를 **만듭니다**. 문서에는 JSON에서 id로 직렬화된 Id 속성이 있어야 합니다.
 
-1. 이러한 클래스를 만들려면 **BasicOperations** 메서드 아래에서 다음 **User**, **OrderHistory**, **ShippingPreference** 및 **CouponsUsed** 클래스를 복사하여 붙여 넣습니다.
+1. 이러한 클래스를 만들려면 다음 **User**, **OrderHistory**, **ShippingPreference** 및 **CouponsUsed** 클래스를 복사하여 **BasicOperations** 메서드 아래에 붙여넣습니다.
 
     ```C#
     public class User
@@ -666,7 +710,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     }
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -674,12 +718,12 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. 다음 결과가 표시되어야 합니다.
 
-    ```텍스트
-    데이터베이스 및 컬렉션 유효성 검사 완료
-    데모의 끝, 종료하려면 아무 키나 누릅니다.
+    ```text
+    Database and collection validation complete
+    End of demo, press any key to exit.
     ```
 
-1. 이제 Program.cs 파일 끝 부분에 나와 있는 **WriteToConsoleAndPromptToContinue** 아래에 **CreateUserDocumentIfNotExists** 태스크를 복사하여 붙여 넣습니다.
+1. 이제 **CreateUserDocumentIfNotExists** 태스크를 복사하여 Program.cs 파일 끝부분의 **WriteToConsoleAndPromptToContinue** 아래에 붙여넣습니다.
 
     ```C#
     private async Task CreateUserDocumentIfNotExists(string databaseName, string collectionName, User user)
@@ -783,7 +827,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -792,17 +836,17 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 1. 다음 결과가 표시되어야 합니다.
 
     ```text
-    데이터베이스 및 컬렉션 유효성 검사 완료
-    생성된 사용자 1
-    계속하려면 아무 키나 누르십시오.
-    생성된 사용자 2
-    계속하려면 아무 키나 누르십시오.
-    데모의 끝, 종료하려면 아무 키나 누릅니다.
+    Database and collection validation complete
+    Created User 1
+    Press any key to continue ...
+    Created User 2
+    Press any key to continue ...
+    End of demo, press any key to exit.
     ```
 
 #### 문서 읽기
 
-1. 데이터베이스에서 문서를 읽으려면 다음 코드를 복사하고 Program.cs 파일의 **WriteToConsoleAndPromptTo** 메서드 다음에 배치합니다.
+1. 데이터베이스에서 문서를 읽으려면 다음 코드를 복사하여 Program.cs 파일의 **WriteToConsoleAndPromptTo** 메서드 다음에 추가합니다.
 
     ```C#
     private async Task ReadUserDocument(string databaseName, string collectionName, User user)
@@ -826,13 +870,13 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     }
     ```
 
-1. 다음 코드를 복사하여 BasicOperations 메서드의 끝에서 **await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);** 행 다음에 붙여 넣습니다.
+1. 다음 코드를 복사하여 BasicOperations 메서드 끝부분의 **await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);** 줄 다음에 붙여넣습니다.
 
     ```C#
     await this.ReadUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -840,20 +884,20 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. 다음 결과가 표시되어야 합니다.
 
-    ```텍스트
-    데이터베이스 및 컬렉션 유효성 검사 완료
-    사용자 1이 해당 데이터베이스에 이미 존재합니다.
-    계속하려면 아무 키나 누르십시오.
-    사용자 2이 해당 데이터베이스에 이미 존재합니다.
-    계속하려면 아무 키나 누르십시오.
-    사용자 1 읽기
-    계속하려면 아무 키나 누르십시오.
-    데모의 끝, 종료하려면 아무 키나 누릅니다.
+    ```text
+    Database and collection validation complete
+    User 1 already exists in the database
+    Press any key to continue ...
+    User 2 already exists in the database
+    Press any key to continue ...
+    Read user 1
+    Press any key to continue ...
+    End of demo, press any key to exit.
     ```
 
 #### 문서 바꾸기
 
-1. **ReplaceUserDocument** 메서드를 복사하여 Program.cs의 **ReadUserDocument** 메서드 이후에 붙여넣습니다.
+1. **ReplaceUserDocument** 메서드를 복사하여 Program.cs의 **ReadUserDocument** 메서드 뒤에 붙여넣습니다.
 
     ```C#
     private async Task ReplaceUserDocument(string databaseName, string collectionName, User updatedUser)
@@ -877,14 +921,14 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     }
     ```
 
-1. 다음 코드를 복사하여 **BasicOperations** 메서드의 끝에서 **await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);** 행 다음에 붙여 넣습니다.
+1. 다음 코드를 복사하여 **BasicOperations** 메서드 끝부분의 **await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);** 줄 다음에 붙여넣습니다.
 
     ```C#
     yanhe.LastName = "Suh";
     await this.ReplaceUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -893,21 +937,21 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 1. 다음 결과가 표시되어야 합니다.
 
     ```text
-        데이터베이스 및 컬렉션 유효성 검사 완료
-        사용자 1이 해당 데이터베이스에 이미 존재합니다.
-        계속하려면 아무 키나 누르십시오.
-         사용자 2이 해당 데이터베이스에 이미 존재합니다.
-        계속하려면 아무 키나 누르십시오.
-         성을 Suh로 교체됨
-        계속하려면 아무 키나 누르십시오.
-         사용자 1 읽기
-        계속하려면 아무 키나 누르십시오.
-         데모의 끝, 종료하려면 아무 키나 누릅니다.
+        Database and collection validation complete
+        User 1 already exists in the database
+        Press any key to continue ...
+         User 2 already exists in the database
+        Press any key to continue ...
+         Replaced last name for Suh
+        Press any key to continue ...
+         Read user 1
+        Press any key to continue ...
+         End of demo, press any key to exit
     ```
 
 #### 문서 삭제
 
-1. **ReplaceUserDocument** 메서드 아래에 있는 **DeleteUserDocument** 메서드를 복사하여 붙여넣습니다.
+1. **DeleteUserDocument** 메서드를 복사하여 **ReplaceUserDocument** 메서드 아래에 붙여넣습니다.
 
     ```C#
     private async Task DeleteUserDocument(string databaseName, string collectionName, User deletedUser)
@@ -937,7 +981,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     await this.DeleteUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -946,20 +990,20 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 1. 다음 결과가 표시되어야 합니다.
 
     ```text
-    데이터베이스 및 컬렉션 유효성 검사 완료
-    사용자 1이 해당 데이터베이스에 이미 존재합니다.
-    계속하려면 아무 키나 누르십시오.
-        사용자 2이 해당 데이터베이스에 이미 존재합니다.
-    계속하려면 아무 키나 누르십시오.
-        성을 Suh로 교체함
-    계속하려면 아무 키나 누르십시오.
-        사용자 1 읽기
-    계속하려면 아무 키나 누르십시오.
-        삭제된 사용자 1
-    데모가 끝나고 종료하려면 아무 키나 누릅니다.
+    Database and collection validation complete
+    User 1 already exists in the database
+    Press any key to continue ...
+        User 2 already exists in the database
+    Press any key to continue ...
+        Replaced last name for Suh
+    Press any key to continue ...
+        Read user 1
+    Press any key to continue ...
+        Deleted user 1
+    End of demo, press any key to exit.
     ```
 
-### 작업 4: Azure Cosmos DB .NET Core SDK를 사용한 쿼리
+### 태스크 4: Azure Cosmos DB .NET Core SDK를 사용한 쿼리
 
 1. 다음 샘플에서는 .NET 코드의 SQL, LINQ 또는 LINQ 람다에서 쿼리를 수행하는 방법이 제시되어 있습니다. 코드를 복사하여 Program.cs 파일 끝부분에서 **private async Task CreateUserDocumentIfNotExists** 다음에 추가합니다.
 
@@ -997,13 +1041,13 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     }
     ```
 
-1. 다음 코드를 복사하여 BasicOperations 메서드에서 **await this.DeleteUserDocument("Users", "WebCustomers", yanhe);** 행 앞에 붙여 넣습니다.
+1. 다음 코드를 복사하여 BasicOperations 메서드에서 **await this.DeleteUserDocument("Users", "WebCustomers", yanhe);** 줄 앞에 붙여넣습니다.
 
     ```C#
     this.ExecuteSimpleQuery("Users", "WebCustomers");
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -1012,25 +1056,25 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 1. 다음 결과가 표시되어야 합니다.
 
     ```text
-    데이터베이스 및 컬렉션 유효성 검사 완료
-    생성된 사용자 1
-    계속하려면 아무 키나 누르십시오.
-     사용자 2이 해당 데이터베이스에 이미 존재합니다.
-    계속하려면 아무 키나 누르십시오.
-     성을 Suh로 교체됨
-    계속하려면 아무 키나 누르십시오.
-     사용자 1 읽기
-    계속하려면 아무 키나 누르십시오.
-     LINQ 쿼리 실행...
+    Database and collection validation complete
+    Created User 1
+    Press any key to continue ...
+     User 2 already exists in the database
+    Press any key to continue ...
+     Replaced last name for Suh
+    Press any key to continue ...
+     Read user 1
+    Press any key to continue ...
+     Running LINQ query...
             Read {"id":"2","userId":"nelapin","lastName":"Pindakova","firstName":"Nela","email":"nelapin@contoso.com","dividend":"8.50","OrderHistory":[{"OrderId":"1001","DateShipped":"08/17/2018","Total":"105.89"}],"ShippingPreference":[{"Priority":1,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"},{"Priority":2,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"}],"CouponsUsed":[{"CouponCode":"Fall2018"}]}
-    직접적인 SQL 쿼리 실행...
+    Running direct SQL query...
             Read {"id":"2","userId":"nelapin","lastName":"Pindakova","firstName":"Nela","email":"nelapin@contoso.com","dividend":"8.50","OrderHistory":[{"OrderId":"1001","DateShipped":"08/17/2018","Total":"105.89"}],"ShippingPreference":[{"Priority":1,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"},{"Priority":2,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"}],"CouponsUsed":[{"CouponCode":"Fall2018"}]}
-    계속하려면 아무 키나 누르십시오.
-     삭제된 사용자 1
-    데모의 끝, 종료하려면 아무 키나 누릅니다.
+    Press any key to continue ...
+     Deleted user 1
+    End of demo, press any key to exit.
     ```
 
-### 작업 5: 애플리케이션에서 저장 프로시저 만들기 및 실행
+### 태스크 5: 애플리케이션에서 저장 프로시저 만들기 및 실행
 
 1. Visual Studio Code의 **Azure: Cosmos DB 탭** 에서 **Azure Cosmos DB 계정**, **Users**, **WebCustomers** 를 확장한 다음 **저장 프로시저** 를 마우스 오른쪽 단추로 클릭하고 **저장 프로시저 만들기** 를 클릭합니다.
 
@@ -1050,13 +1094,13 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
     }
     ```
 
-1. 다음 코드를 복사하여 BasicOperations 메서드에서 await this.DeleteUserDocument("Users", "WebCustomers", yanhe); 행 앞에 붙여 넣습니다.
+1. 다음 코드를 복사하여 BasicOperations 메서드에서 await this.DeleteUserDocument("Users", "WebCustomers", yanhe); 줄 앞에 붙여넣습니다.
 
     ```C#
     await this.RunStoredProcedure("Users", "WebCustomers", yanhe);
     ```
 
-1. 통합 터미널에서 다음 명령을 복사하여 붙여 프로그램을 실행하여 실행되는지 확인합니다.
+1. 마찬가지로 통합 터미널에서 다음 명령을 복사한 다음 붙여넣고 프로그램을 실행하여 프로그램이 실행되는지 확인합니다.
 
     ```bash
     dotnet run
@@ -1065,61 +1109,24 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 1. 다음 결과가 표시되어야 합니다.
 
     ```text
-    데이터베이스 및 컬렉션 유효성 검사 완료
-    생성된 사용자 1
-    계속하려면 아무 키나 누르십시오.
-     사용자 2이 해당 데이터베이스에 이미 존재합니다.
-    계속하려면 아무 키나 누르십시오.
-     성을 Suh로 교체됨
-    계속하려면 아무 키나 누르십시오.
-     사용자 1 읽기
-    계속하려면 아무 키나 누르십시오.
-     LINQ 쿼리 실행...
+    Database and collection validation complete
+    Created User 1
+    Press any key to continue ...
+     User 2 already exists in the database
+    Press any key to continue ...
+     Replaced last name for Suh
+    Press any key to continue ...
+     Read user 1
+    Press any key to continue ...
+     Running LINQ query...
             Read {"id":"2","userId":"nelapin","lastName":"Pindakova","firstName":"Nela","email":"nelapin@contoso.com","dividend":"8.50","OrderHistory":[{"OrderId":"1001","DateShipped":"08/17/2018","Total":"105.89"}],"ShippingPreference":[{"Priority":1,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"},{"Priority":2,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"}],"CouponsUsed":[{"CouponCode":"Fall2018"}]}
-    직접적인 SQL 쿼리 실행...
+    Running direct SQL query...
             Read {"id":"2","userId":"nelapin","lastName":"Pindakova","firstName":"Nela","email":"nelapin@contoso.com","dividend":"8.50","OrderHistory":[{"OrderId":"1001","DateShipped":"08/17/2018","Total":"105.89"}],"ShippingPreference":[{"Priority":1,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"},{"Priority":2,"AddressLine1":"505 NW 5th St","AddressLine2":null,"City":"New York","State":"NY","ZipCode":"10001","Country":"USA"}],"CouponsUsed":[{"CouponCode":"Fall2018"}]}
-    계속하려면 아무 키나 누르십시오.
-     저장 프로시저가 완료됨
-    삭제된 사용자 1
-    데모의 끝, 종료하려면 아무 키나 누릅니다.
+    Press any key to continue ...
+     Stored procedure complete
+    Deleted user 1
+    End of demo, press any key to exit.
    ```
 
 >**결과** 이 연습에서는 Visual Studio Code를 Azure Cosmos DB와 연결하도록 설정하여 콘솔 애플리케이션을 처음부터 빌드했습니다. 그런 다음 프로그래밍 방식으로 NoSQL 데이터를 만들고, 읽고, 업데이트하고, 삭제하는 .Net 코드를 만들었습니다. 그런 다음 Cosmos DB를 쿼리하는 코드를 추가하고 Cosmos DB에서 작업할 저장 프로시저와 같은 프로그래밍 개체를 만드는 방법을 배웠습니다.
 
-## 연습 4: Azure Cosmos DB를 사용하여 전역으로 데이터 분산
-
-예상 시간: 15분
-
-개인 연습
-
-이 연습의 주요 작업은 다음과 같습니다.
-
-1. 여러 지역으로 데이터
-
-1. 장애 조치(failover) 관리
-
-### 작업 1: 여러 지역으로 데이터
-
-1. Microsoft Edge에서 **Data Explorer - Microsoft..** 탭을 클릭합니다.
-
-1. "연결 오류"라는 메시지가 나타나면 **새로 고침** 버튼을 클릭합니다.
-
-1. **awcdbstudxx - 데이터 탐색기** 창에서 **전역으로 데이터 복제** 를 클릭합니다.
-
-1. 세계 지도에서 거주 중인 대륙 내의 데이터 센터 위치를 하나 한 번 클릭하고 **저장** 을 클릭합니다.
-
->**참고** 추가 데이터 센터의 프로비저닝에는 약 7분이 걸립니다.
-
-### 작업 2: 장애 조치(failover) 관리.
-
-1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **수동 장애 조치(failover)** 를 클릭합니다.
-
-1. **읽기 영역** 데이터 센터 위치를 클릭하고 **확인** 을 클릭합니다.
-
->**참고** 수동 장애 조치(Failover)는 약 3분 정도 걸립니다.
-
-1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **자동 장애 조치(failover)** 를 클릭합니다
-
-1. "자동 장애 조치(failover)" 화면에서 **ON** 버튼을 클릭한 다음 **확인** 을 클릭합니다.
-
->**참고** 자동 장애 조치(failover)의 프로비저닝에는 약 3분이 걸립니다.
