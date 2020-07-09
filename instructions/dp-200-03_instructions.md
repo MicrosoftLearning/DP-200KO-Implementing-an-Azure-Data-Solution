@@ -139,7 +139,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen2 
 
     - **풀**: **None**
 
-    - **Databricks 런타임 버전**: **런타임: 6.2(Scala 2.11, Spark 2.4.4)**
+    - **Databricks 런타임 버전**: **런타임: 6.3(Scala 2.11, Spark 2.4.4)**
 
     - 비활성 확인란에서 **60분 후 종료**를 선택했는지 확인합니다. 클러스터를 사용하고 있지 않다면 클러스터를 종료할 시간(분)을 입력합니다.
 
@@ -287,7 +287,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen2 
     val df = spark.read.json("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/preferences.json")
     ```
 
-1. 이 코드 블록에서 **file-system-name**을 **data**로 바꾸고 이 코드 블록에 있는 **storage-account-name** 자리 표시자 값을 앞서 수집하여 메모장에 보관한 값으로 바꿉니다.
+1. 이 코드 블록에서 **file-system-name**을 **logs**로 바꾸고 이 코드 블록에 있는 **storage-account-name** 자리 표시자 값을 앞서 수집하여 메모장에 보관한 값으로 바꿉니다.
 
 1. 노트의 **Cmd 2** 셀에서, **실행** 아이콘을 클릭하고 **셀 실행**을 클릭합니다. 
 

@@ -94,7 +94,7 @@ Azure Data Factory 만들기: [Azure Portal](https://portal.azure.com)을 사용
 
 1. 원본으로 사용할 새 HTTP 데이터 세트 만들기
 
-1. 새 ADLS Gen2 데이터 세트 싱크 만들기
+1. 새 ADLS Gen2 싱크 만들기
 
 1. 복사 활동 테스트
 
