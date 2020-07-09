@@ -344,7 +344,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 1. Azure Portal의 Data Explorer 전체 화면에서 **새 저장 프로시저** 드롭다운 단추를 클릭하고 **새 UDF**를 클릭합니다.
 
-    > **참고**: **function userDefinedFunction(){}**을 보여 주는 새 UDF 1 화면이 표시됩니다.
+    > **참고**: **function userDefinedFunction(){}** 을 보여 주는 새 UDF 1 화면이 표시됩니다.
 
 1. 새 정의 함수 화면에서 **사용자 정의 함수 ID** 텍스트 상자에 **producttax**를 입력합니다.
 
@@ -415,7 +415,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 ### 작업 1: 여러 지역으로 데이터
 
-1. Microsoft Edge에서 **awcdbstudxx - Data Explorer..**를 나타내는 탭을 클릭합니다.
+1. Microsoft Edge에서 **awcdbstudxx - Data Explorer..** 를 나타내는 탭을 클릭합니다.
 
 1. "연결 오류"라는 메시지가 나타나면 **새로 고침** 단추를 클릭합니다.
 
@@ -429,7 +429,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 ### 작업 2: 장애 조치(failover) 관리.
 
-1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **수동 장애 조치(failover)**를 클릭합니다.
+1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **수동 장애 조치(failover)** 를 클릭합니다.
 
 1. **지역 읽기** 데이터 센터 위치를 클릭한 다음 "내용을 이해하며 현재 쓰기 영역에서 장애 조치(failover)를 트리거하는 데 동의합니다.” 옆의 확인란을 클릭하고 **확인**을 클릭합니다.
 
@@ -437,7 +437,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 ![Azure Portal의 Cosmos DB 수동 장애 조치](Linked_Image_Files/M04-E03-T02-img1.png)
 
-1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **자동 장애 조치(failover)**를 클릭합니다
+1. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **자동 장애 조치(failover)** 를 클릭합니다
 
 1. "자동 장애 조치(failover)" 화면에서 **ON** 버튼을 클릭한 다음 **확인**을 클릭합니다.
 
