@@ -418,7 +418,7 @@ URL에 액세스할 수 없는 경우, 노트 복사본은 _Allfiles\Labfiles\St
 - **05-Applying-Schemas-to-JSON** - 이 노트에서는 DataFrames으로 JSON 및 계층 구조 데이터를 쿼리하는 방법을 배웁니다.
 - **06-Corrupt-Record-Handling** - 이 노트북에는 ADLS를 만들고 Databricks DataFrames를 사용하여 이 데이터를 쿼리하고 분석하는 방법을 이해하는 데 도움이 되는 연습이 나열되어 있습니다.
 - **07-Loading-Data-and-Productionalizing** - 이곳에서는 Databricks를 사용하여 Azure Data Lake Storage Gen2의 데이터 저장소를 쿼리하고 분석합니다.
-- **Parsing-Nested-Data** - 이 노트는 Optional 하위 폴더에 있으며 나중에 개인 시간에 둘러볼 수 있는 샘플 프로젝트가 포함되어 있습니다.
+- **08-Parsing-Nested-Data** - 이 노트는 Optional 하위 폴더에 있으며 나중에 개인 시간에 둘러볼 수 있는 샘플 프로젝트가 포함되어 있습니다.
 
 >[참고] Solutions 하위 폴더에서 해당 노트를 찾을 수 있습니다. 여기에는 하나 이상의 과제를 완료하도록 요청하는 연습을 위한 완성된 셀이 포함되어 있습니다. 문제가 있거나 단순히 솔루션을 보기 원할 경우 참조하세요.
 
@@ -449,6 +449,6 @@ URL에 액세스할 수 없는 경우, 노트 복사본은 _Allfiles\Labfiles\St
 - **05-Joins-and-Lookup-Tables** - 이 노트에서는 테이블의 표준 및 브로드캐스트 조인을 사용하는 방법을 배웁니다.
 - **06-Database-Writes** - 이 노트에는 여러 대상 데이터베이스에 데이터를 병렬로 쓰고 ETL 작업에서 변환된 데이터를 저장하는 연습이 포함되어 있습니다.
 - **07-Table-Management** - 여기에서는 관리되는 테이블과 관리되지 않는 테이블을 처리하여 데이터 저장소를 최적화합니다.
-- **Custom-Transformations** - 이 노트는 Optional 하위 폴더에 있으며 나중에 개인 시간에 둘러볼 수 있는 샘플 프로젝트가 포함되어 있습니다.
+- **08-Custom-Transformations** - 이 노트는 Optional 하위 폴더에 있으며 나중에 개인 시간에 둘러볼 수 있는 샘플 프로젝트가 포함되어 있습니다.
 
 >[참고] Solutions 하위 폴더 내에서 해당 노트를 찾을 수 있습니다. 여기에는 하나 이상의 과제를 완료하도록 요청하는 연습용 완성된 셀이 포함되어 있습니다. 문제가 있거나 단순히 해결책을 보기 원할 경우 참조하세요.
