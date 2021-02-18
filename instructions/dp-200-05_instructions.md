@@ -33,7 +33,7 @@
 3. Azure Synapse Analytics 작성 및 쿼리 
 4. PolyBase를 사용하여 Azure Synapse Analytics에 데이터 로드 
 
-> **중요**: 이 랩을 진행하면서 프로비전 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx에_있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
+> **중요**: 이 랩을 진행하면서 프로비전 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx_ 에 있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
 
 ## 연습 1: Azure SQL Database 사용
 
@@ -378,7 +378,7 @@
 
 13. **새 SQL 스크립트**, **빈 스크립트**를 차례로 선택합니다.
 
-14. 쿼리 창에 다음 코드를 입력합니다. 이 코드는 **HADOOP** 형식으로 작성되었으며 ****AzureStorageCredential**을 사용하는 데이터 컨테이너 및 Blob Storage 계정용 외부 데이터 원본 **AzureStorage**를 생성합니다. 위치 키의 **awdlsstudxx**를 귀하의 이니셜을 포함한 스토리지 계정과 바꿔야 합니다. 
+14. 쿼리 창에 다음 코드를 입력합니다. 이 코드는 **HADOOP** 형식으로 작성되었으며 **AzureStorageCredential**을 사용하는 데이터 컨테이너 및 Blob Storage 계정용 외부 데이터 원본 **AzureStorage**를 생성합니다. 위치 키의 **awdlsstudxx**를 귀하의 이니셜을 포함한 스토리지 계정과 바꿔야 합니다. 
 
     ```SQL
 	CREATE EXTERNAL DATA SOURCE AzureStorage

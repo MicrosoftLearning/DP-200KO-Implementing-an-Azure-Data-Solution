@@ -35,7 +35,7 @@ AdventureWorks의 수석 데이터 엔지니어로서 귀하는 데이터 부동
 4. 보안된 데이터 저장소
 5. 보안된 스트리밍 데이터
 
-> **중요**: 이 랩을 진행하면서 프로비전 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx에_있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
+> **중요**: 이 랩을 진행하면서 프로비전 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx_ 에 있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
 
 ## 연습 1: 보안 소개
 
@@ -128,7 +128,7 @@ AdventureWorks의 수석 데이터 엔지니어로서 귀하는 데이터 부동
 
 ### 작업 1: 감사 활성화
 
-1. Azure Portal에서 **리소스 그룹**, awrgstudxx, sqlservicexx를 차례로 클릭하여 **AdventureworksLT (sqlservicekdwj/AdventureworksLT)**로 이동합니다.
+1. Azure Portal에서 **리소스 그룹**, awrgstudxx, sqlservicexx를 차례로 클릭하여 **AdventureworksLT (sqlservicekdwj/AdventureworksLT)** 로 이동합니다.
 
 2. AdventureworksLT (sqlservicekdwj/AdventureworksLT) 화면에서 **감사** 블레이드를 클릭합니다.
 
@@ -148,7 +148,7 @@ AdventureWorks의 수석 데이터 엔지니어로서 귀하는 데이터 부동
 
 ### 작업 2: 데이터베이스 쿼리
 
-1. Azure Portal에서 **리소스 그룹**, awrgstudxx, sqlservicexx를 차례로 클릭하여 **AdventureworksLT (sqlservicekdwj/AdventureworksLT)**로 이동합니다.
+1. Azure Portal에서 **리소스 그룹**, awrgstudxx, sqlservicexx를 차례로 클릭하여 **AdventureworksLT (sqlservicekdwj/AdventureworksLT)** 로 이동합니다.
 
 2. **쿼리 편집기**로 이동합니다.
 
