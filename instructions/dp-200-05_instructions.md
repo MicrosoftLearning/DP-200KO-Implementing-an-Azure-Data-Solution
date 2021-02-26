@@ -3,17 +3,17 @@
 
 **예상 소요 시간**: 75분
 
-**전제 조건**: 이 랩 관련 사례 연구의 내용을 확인했다고 가정합니다. 모듈 1의 콘텐츠 및 랩은 다음과 같은 것으로 가정합니다. 데이터 엔지니어를 위한 Azure도 완료되었습니다.
+**전제 조건**: 이 랩의 사례 연구를 읽었다고 가정합니다. 모듈 1의 콘텐츠 및 랩이 다음과 같다고 가정합니다. 데이터 엔지니어를 위한 Azure도 완료되었습니다.
 
 **랩 파일**: 이 랩용 파일은 _Allfiles\Labfiles\Starter\DP-200.5_ 폴더에 있습니다.
 
 ## 랩 개요
 
-학생들은 Azure SQL Database 및 Azure Synapse Analytics 서버를 프로비전하고 생성된 인스턴스 중 하나에 대해 쿼리를 발급할 수 있습니다. 또한 데이터 웨어하우스를 여러 다른 데이터 플랫폼 기술과 통합하고 PolyBase를 사용하여 하나의 데이터 원본에서 Azure Synapse Analytics로 데이터를 로드할 수 있습니다.
+학생들은 Azure SQL Database 및 Azure Synapse Analytics 서버를 프로비전하고 생성된 인스턴스 중 하나에 대해 쿼리할 수 있습니다. 또한 데이터 웨어하우스를 여러 다른 데이터 플랫폼 기술과 통합하고 PolyBase를 사용하여 하나의 데이터 원본에서 Azure Synapse Analytics로 데이터를 로드할 수 있습니다.
 
 ## 랩 목표
   
-이 랩을 완료하면 다음과 같은 작업을 수행할 수 있습니다.
+이 랩을 완료하면 다음을 할 수 있습니다.
 
 1. Azure SQL Database 사용
 2. Azure Synapse Analytics 설명 
@@ -24,16 +24,16 @@
   
 귀하는 AdventureWorks의 수석 데이터 엔지니어이며 팀과 협력하여 온-프레미스 SQL Server에서 Azure에 있는 Azure SQL Database로 관계형 데이터베이스 시스템을 전환합니다. 먼저 회사의 샘플 데이터베이스를 사용하여 Azure SQL Database의 인스턴스를 만듭니다. 이 인스턴스를 주니어 데이터 엔지니어에게 넘겨 부서별 데이터베이스의 일부 테스트를 수행하려고 합니다.
 
-그런 다음 Azure Synapse Analytics 서버를 프로비전하고 일련의 쿼리로 샘플 데이터베이스를 테스트하여 서버 프로비전이 성공적임을 테스트합니다. 그런 다음 PolyBase를 사용하여 Azure Blob에서 차원 테이블을 로드하여 이러한 데이터 플랫폼 기술과 Azure Synapse Analytics가 통합되어 있는지 테스트합니다.
+그런 다음 Azure Synapse Analytics 서버를 프로비전하고 일련의 쿼리로 샘플 데이터베이스를 테스트하여 서버 프로비전이 성공적인지 테스트합니다. 그런 다음 PolyBase를 사용하여 Azure Blob에서 차원 테이블을 로드하여 이러한 데이터 플랫폼 기술과 Azure Synapse Analytics가 통합되어 있는지 테스트합니다.
 
-이 랩을 마치면 다음과 같은 역량을 갖추게 됩니다.
+이 랩을 마치게 되면 다음을 수행했습니다.
 
 1. Azure SQL Database 사용
 2. Azure Synapse Analytics 설명 
 3. Azure Synapse Analytics 작성 및 쿼리 
 4. PolyBase를 사용하여 Azure Synapse Analytics에 데이터 로드 
 
-> **중요**: 이 랩을 진행하면서 프로비전 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx_ 에 있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 때 저장합니다.
+> **중요**: 이 랩을 진행하면서 프로비전 또는 구성 작업에서 발생한 문제를 기록하고 _\Labfiles\DP-200-Issues-Doc.docx_에 있는 문서의 테이블에 로그인합니다. 랩 번호를 문서화하고, 기술을 기록하며, 문제를 설명하고, 해결 방법이 무엇인지 설명합니다. 이 문서를 나중에 모듈에서 다시 참조할 수 있도록 저장합니다.
 
 ## 연습 1: Azure SQL Database 사용
 
@@ -59,7 +59,7 @@
     
         - **구독**: 이 랩에서 사용 중인 구독의 이름
 
-        - **리소스 그룹**: **awrgstudxx**, 여기서 **xx**는 사용자의 이니셜입니다.
+        - **리소스 그룹**: **awrgstudxx**, 여기서 **xx**는 귀하의 이니셜입니다.
 
     - **추가 설정** 탭을 클릭하고 **샘플**을 클릭합니다. AdventureworksLT 샘플 데이터베이스가 자동으로 선택됩니다. 
     
@@ -71,7 +71,7 @@
      
         - 서버: **새로 만들기**를 클릭해 다음 설정을 사용하여 새 서버를 만들고 **확인**을 클릭합니다.
             - **서버 이름**: **SQLServicexx**, 여기서 **xx**는 귀하의 이니셜입니다.
-            - **서버 관리자 로그인**: **xxsqladmin**, 여기서 **xx**는 사용자의 이니셜입니다.
+            - **서버 관리자 로그인**: **xxsqladmin**, 여기서 **xx**는 귀하의 이니셜입니다.
             - **암호**: **Pa55w.rd**
             - **암호 확인**: **Pa55w.rd**
             - **위치**: 가까운 **위치**를 선택합니다.
@@ -86,11 +86,11 @@
 
 5. **SQL Database 만들기** 블레이드에서 **검토 + 만들기**를 클릭합니다.
 
-6. **SQL Database 만들기*** 블레이드를 유효성 검사한 후 **만들기**를 클릭합니다.
+6. **SQL Database 만들기*** 블레이드의 유효성을 검사한 후 **만들기**를 클릭합니다.
 
    > **참고**: 프로비전하는 데 약 4분이 소요됩니다.
 
-> **결과**: 이 연습을 완료한 후 Azure SQL Database 인스턴스를 만들었습니다.
+> **결과**: 이 연습을 통해 Azure SQL Database 인스턴스를 만들었습니다.
 
 ## 연습 2: Azure Synapse Analytics 설명
   
@@ -122,16 +122,16 @@
 
         - **구독**: 이 랩에서 사용 중인 구독의 이름
 
-        - **리소스 그룹**: **awrgstudxx**, 여기서 **xx**는 사용자의 이니셜입니다.
+        - **리소스 그룹**: **awrgstudxx**, 여기서 **xx**는 귀하의 이니셜입니다.
 
     - 작업 영역 세부 정보 섹션에서 다음 설정을 사용하여 작업 영역을 만듭니다.
         
-        - **작업 영역 이름**: **wrkspcxx**. 여기서 **xx**는 사용자의 이니셜입니다.
+        - **작업 영역 이름**: **wrkspcxx**. 여기서 **xx**는 귀하의 이니셜입니다.
         - **지역**: 사용자의 현재 위치 및 리소스 그룹을 배포한 위치와 가장 가까운 지역을 선택합니다.
         - **Data Lake Storage Gen2 선택**: "구독에서"
-        - **계정 이름**: **awdlsstudxx**를 선택합니다. 여기서 **xx**는 사용자의 이니셜입니다.
+        - **계정 이름**: **awdlsstudxx**를 선택합니다. 여기서 **xx**는 귀하의 이니셜입니다.
         - **파일 시스템 이름**: **data**를 선택합니다.
-        - "나에게 Data Lake Storage Gen2 계정 'awdlsstudxx'의 Storage Blob 데이터 참가자 역할 할당"을 **선택**합니다. 
+        - "나에게 Data Lake Storage Gen2 계정 'awdlsstudxx'의 Storage Blob 데이터 기여자 역할 할당"을 **선택**합니다. 
 
         ![Synapse 작업 영역 만들기](Linked_Image_Files/M05-E02-T01-img01a.png) 
 
@@ -152,7 +152,7 @@
 7. **+ 새 전용 SQL 풀**을 선택합니다.
 
 8. **전용 SQL 풀 만들기** 블레이드의 **기본 사항** 페이지에서 다음 설정을 구성합니다.
-        - 전용 SQL 풀 이름: **dedsqlxx**. 여기서 **xx**는 사용자의 이니셜입니다.
+        - 전용 SQL 풀 이름: **dedsqlxx**. 여기서 **xx**는 귀하의 이니셜입니다.
         - 다른 모든 설정은 기본값으로 유지합니다.
 
 9. **전용 SQL 풀 만들기** 화면에서 **검토 + 만들기**를 클릭합니다.
@@ -164,7 +164,7 @@
 
 ### 작업 2: 서버 방화벽 구성
 
-1. Azure Portal의 블레이드에서 **리소스 그룹**을 클릭하고 **awrgstudxx**, **wrkspcxx**를 차례로 클릭합니다. 여기서 **xx**는 사용자의 이니셜입니다.
+1. Azure Portal의 블레이드에서 **리소스 그룹**을 클릭하고 **awrgstudxx**, **wrkspcxx**를 차례로 클릭합니다. 여기서 **xx**는 귀하의 이니셜입니다.
 
 2. **wrkspcxx** 화면에서 **방화벽**을 클릭합니다.
 
@@ -182,7 +182,7 @@
 
 1. 리소스 그룹의 **dedsqlxx** 리소스로 이동합니다. 
 
-2. **dedsqlxx**를 클릭합니다. 여기서 **xx**는 사용자의 이니셜입니다.
+2. **dedsqlxx**를 클릭합니다. 여기서 **xx**는 귀하의 이니셜입니다.
 
 3. **dedsqlkxx (wrkspcxx/dedsqlxx)** 화면에서 **일시 중지**를 클릭합니다.
 
@@ -204,7 +204,7 @@
 
 3. 전용 SQL 풀 테이블 만들기
 
-    > **참고**: Transact-SQL에 익숙하지 않은 경우 다음 위치에서 다음 랩에 대한 문을 사용할 수 있습니다. **Allfiles\Labfiles\Starter\DP-200.5\SQL DW Files**
+    > **참고**: Transact-SQL에 익숙하지 않은 경우 **Allfiles\Labfiles\Starter\DP-200.5\SQL DW Files** 위치에 다음 랩을 위한 문이 있습니다.
 
 ### 작업 1: Azure Synapse Studio에 전용 SQL 풀 연결
 
@@ -223,7 +223,7 @@
     ![전용 SQL 풀 새 SQL 스크립트](Linked_Image_Files/M05-E03-T01-img01a.png)
 
 
-7. 쿼리 창에 아래 쿼리를 붙여넣습니다. 이 쿼리는 서비스 목표가 DW100이고 최대 크기가 1024GB인 **DWDB** 데이터베이스를 만듭니다.
+7. 쿼리 창에 아래 쿼리를 붙여 넣습니다. 이 쿼리는 서비스 목표가 DW100이고 최대 크기가 1024GB인 **DWDB** 데이터베이스를 만듭니다.
 
     ```SQL
     CREATE DATABASE DWDB COLLATE SQL_Latin1_General_CP1_CI_AS
@@ -234,7 +234,7 @@
     );
     ```
 
-8. **데이터베이스 사용**으로 이동하여 **master**를 선택합니다. 
+8. **데이터베이스 사용**으로 이동하여 **마스터**를 선택합니다. 
 
 9. **실행**을 클릭합니다. 
 
@@ -251,7 +251,7 @@
 
 3. **새 SQL 스크립트**, **빈 스크립트**를 차례로 선택합니다.
 
-    >**참고**: Transact-SQL 사용법을 모르는 경우 Allfiles\Solution\DP-200.5\ 폴더의 **Exercise3 Task3Step2 script.sql** 스크립트를 참조할 수 있습니다. 이 스크립트에는 테이블을 만드는 데 필요한 코드가 대량 포함되어 있습니다. 하지만 각 테이블에 사용할 배포 유형을 선택하여 코드를 완성해야 합니다. 
+    >**참고**: Transact-SQL 사용법을 모르는 경우 Allfiles\Solution\DP-200.5\ 폴더의 **Exercise3 Task3Step2 script.sql** 스크립트를 참조할 수 있습니다. 이 스크립트에는 테이블을 만드는 데 필요한 코드가 대량 포함되어 있습니다. 하지만 각 테이블에 사용할 배포 형식을 선택하여 코드를 완성해야 합니다. 
 
 4. 다음 열을 사용하여 **클러스터형 columnstore** 인덱스가 있고 **복제** 배포를 사용하는 **dbo.Users**라는 테이블을 만듭니다.
 
@@ -259,7 +259,7 @@
     |-------------|-----------|------------|
     | userId | int | Null|
     | City | nvarchar(100) | Null|
-    | 지역 | nvarchar(100) | Null|
+    | Region | nvarchar(100) | Null|
     | Country | nvarchar(100) | Null|
 
       >**참고**: 스크립트가 **DWDB**에 연결되어 있으며 **DWDB** 데이터베이스를 사용하는지 확인합니다. 
@@ -282,11 +282,11 @@
     | Color | nvarchar(100) | Null|
     | StandardCost | int | Null|
     | ListPrice | int | Null|
-    | 크기 | nvarchar(100) | Null|
-    | 가중치 | int | Null|
+    | Size | nvarchar(100) | Null|
+    | Weight | int | Null|
     | DaysToManufacture | int | Null|
-    | 클래스 | nvarchar(100) | Null|
-    | 스타일 | nvarchar(100) | Null|
+    | Class | nvarchar(100) | Null|
+    | Style | nvarchar(100) | Null|
 
     >**참고**: 스크립트가 **DWDB**에 연결되어 있으며 **DWDB** 데이터베이스를 사용하는지 확인합니다. 
 
@@ -328,11 +328,11 @@
 
 ### 작업 1: Azure Blob 계정 이름 및 주요 세부 정보 수집
 
-1. Azure Portal에서 **리소스 그룹**을 선택하고 **awrgstudxx**를 클릭한 다음, **awdbwsstudxx**을 클릭합니다. 여기에서 xx는 사용자의 이름 이니셜입니다.
+1. Azure Portal에서 **리소스 그룹**을 선택하고 **awrgstudxx**를 클릭한 다음, **awdlsstudxx**을 클릭합니다. 여기에서 xx는 귀하의 이름 이니셜입니다.
 
-2. **awsastudxx** 화면에서 **액세스 키**를 클릭합니다. **스토리지 계정 이름** 옆에 있는 아이콘을 클릭하고 메모장에 붙여 넣습니다.
+2. **awdlsstudxx** 화면에서 **액세스 키**를 클릭합니다. **스토리지 계정 이름** 옆에 있는 아이콘을 클릭하고 메모장에 붙여 넣습니다.
 
-3. **awsastudxx - 액세스 키** 화면의 **key1** 아래에서 **키** 옆에 있는 아이콘을 클릭하여 키를 메모장에 붙여넣습니다.
+3. **awdlsstudxx - 액세스 키** 화면의 **key1** 아래에서 **키** 옆에 있는 아이콘을 클릭하여 키를 메모장에 붙여 넣습니다.
 
 ### 작업 2: Azure Blob의 PolyBase를 사용하는 dbo.Dates 테이블 만들기
 
@@ -342,7 +342,7 @@
 
 3. **새 SQL 스크립트**, **빈 스크립트**를 차례로 선택합니다.
 
-4. **DWDB** 데이터베이스에 대한 **마스터 키**를 만듭니다. 쿼리 편집기에서 다음 코드를 입력합니다.
+4. **DWDB** 데이터베이스에 대해 **마스터 키**를 만듭니다. 쿼리 편집기에서 다음 코드를 입력합니다.
 
     ```SQL
     CREATE MASTER KEY;
@@ -357,9 +357,9 @@
 
 8. **새 SQL 스크립트**, **빈 스크립트**를 차례로 선택합니다.
 
-9. 다음 세부 정보를 사용해 데이터베이스 범위 자격 증명 **AzureStorageCredential**을 만듭니다. 쿼리 편집기에 다음 코드를 입력하면 됩니다.
+9. 다음 세부 정보를 사용하여 데이터베이스 범위 자격 증명 **AzureStorageCredential**을 만듭니다. 쿼리 편집기에 다음 코드를 입력하면 됩니다.
     - ID: **MOCID**
-    - 비밀: **스토리지 계정의 액세스 키**
+    - SECRET: **스토리지 계정의 액세스 키**
 
     ```SQL
     CREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential
@@ -378,7 +378,7 @@
 
 13. **새 SQL 스크립트**, **빈 스크립트**를 차례로 선택합니다.
 
-14. 쿼리 창에 다음 코드를 입력합니다. 이 코드는 **HADOOP** 형식으로 작성되었으며 **AzureStorageCredential**을 사용하는 데이터 컨테이너 및 Blob Storage 계정용 외부 데이터 원본 **AzureStorage**를 생성합니다. 위치 키의 **awdlsstudxx**를 귀하의 이니셜을 포함한 스토리지 계정과 바꿔야 합니다. 
+14. 쿼리 창에 다음 코드를 입력합니다. 이 코드는 **HADOOP** 형식으로 작성되었으며 ****AzureStorageCredential을 사용하는 데이터 컨테이너 및 Blob Storage 계정용 외부 데이터 원본 **AzureStorage**를 생성합니다**. 위치 키의 **awdlsstudxx**를 귀하의 이니셜을 포함한 스토리지 계정과 바꿔야 합니다. 
 
     ```SQL
 	CREATE EXTERNAL DATA SOURCE AzureStorage
