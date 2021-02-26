@@ -342,7 +342,7 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 7. Microsoft Edge 브라우저가 열리면 데이터 탐색기에서 **새 저장 프로시저** 드롭다운 단추를 클릭하고 **새 UDF**를 클릭합니다.
 
-    > **참고**: **function userDefinedFunction(){}**을 보여 주는 새 UDF 1 화면이 표시됩니다.
+    > **참고**: **function userDefinedFunction(){} **을 보여 주는 새 UDF 1 화면이 표시됩니다.
 
 8. 새 정의 함수 화면에서 **사용자 정의 함수 ID** 텍스트 상자에 **producttax**를 입력합니다.
 
@@ -427,11 +427,11 @@ AdventureWorks의 개발자 및 정보 서비스 부서는 최근 Azure에서 �
 
 2. **읽기 영역** 데이터 센터 위치를 클릭한 다음 "현재 쓰기 영역에서 장애 조치(failover)를 트리거하는 것을 이해하고 이에 동의합니다(I understand and agree to trigger a failover on my current Write Region)." 옆의 확인란을 클릭하고 **확인**을 클릭합니다.
 
->**참고** 수동 장애 조치(Failover)는 약 3분 정도 걸립니다. 화면이 다음과 같이 표시됩니다. 아이콘 색상이 변경됩니다.
+>**참고** 수동 장애 조치(Failover) 는 약 3분 정도 걸립니다. 화면이 다음과 같이 표시됩니다. 아이콘 색상이 변경됩니다.
 
 ![Azure Portal의 Cosmos DB 수동 장애 조치](Linked_Image_Files/M04-E03-T02-img1.png)
 
-3. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **자동 장애 조치(failover)**를 클릭합니다
+3. **awcdbstudxx - 전역으로 데이터 복제** 창에서 **자동 장애 조치(failover)** 를 클릭합니다
 
 4. "자동 장애 조치(failover)" 화면에서 **켜기(ON)** 단추를 클릭한 다음 **확인**을 클릭합니다.
 

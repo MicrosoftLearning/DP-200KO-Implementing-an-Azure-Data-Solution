@@ -110,7 +110,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen2 
 
 2. Azure Portal에서 **리소스 그룹** 화면으로 이동합니다.
 
-3. 리소스 그룹 화면에서 ****awrgstudxx** 리소스 그룹을 클릭합니다. 여기서 **xx**는 귀하의 이니셜입니다.
+3. 리소스 그룹 화면에서 **awrgstudxx** 리소스 그룹을 클릭합니다. 여기서 **xx**는 귀하의 이니셜입니다.
 
 4. **awrgstudxx** 화면에서 **awdbwsstudxx**를 클릭합니다. 여기서 **xx**는 Azure Databricks를 여는 귀하의 이니셜입니다. 그러면 Azure Databricks 서비스가 열립니다.
 
@@ -190,7 +190,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen2 
 
 3. **Microsoft - 앱 등록** 화면에서 **+ 새 등록** 단추를 클릭합니다.
 
-4. 애플리케이션 등록 화면에서 **이름**을 **DLAccess**로 입력하고 **리디렉션 URI(선택 사항)** 섹션에서 **웹**이 선택되어 있는지 확인한 후에 애플리케이션 값으로 **http://localhost**를 입력합니다. 값을 설정 한 후.
+4. 애플리케이션 등록 화면에서 **이름**을 **DLAccess**로 입력하고 **리디렉션 URI(선택 사항)** 섹션에서 **웹**이 선택되어 있는지 확인한 후에 애플리케이션 값으로 **http://localhost** 를 입력합니다. 값을 설정 한 후.
 
     ![Azure Portal에서 애플리케이션 등록](Linked_Image_Files/M03-E03-T03-img01.png)
 
@@ -212,7 +212,7 @@ Azure Databricks 환경을 프로비전한 다음 기존 Data Lake Storage Gen2 
 
 10. 리소스 그룹에 Storage Blob 데이터 기여자 권한을 할당합니다. Azure Portal에서 **홈** 하이퍼링크를 클릭하고 **리소스 그룹** 아이콘을 클릭하고 리소스 그룹 **awrgstudxx**를 클릭합니다. 여기서 **xx**는 귀하의 이니셜입니다.
 
-11. **awrgstudxx** 화면에서 **액세스 제어(IAM)**를 클릭합니다. 
+11. **awrgstudxx** 화면에서 **액세스 제어(IAM)** 를 클릭합니다. 
 
 12. **역할 할당** 탭을 클릭합니다. 
 

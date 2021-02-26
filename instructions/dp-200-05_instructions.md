@@ -86,7 +86,7 @@
 
 5. **SQL Database 만들기** 블레이드에서 **검토 + 만들기**를 클릭합니다.
 
-6. **SQL Database 만들기*** 블레이드의 유효성을 검사한 후 **만들기**를 클릭합니다.
+6. **SQL Database 만들기** 블레이드의 유효성을 검사한 후 **만들기**를 클릭합니다.
 
    > **참고**: 프로비전하는 데 약 4분이 소요됩니다.
 
@@ -378,7 +378,7 @@
 
 13. **새 SQL 스크립트**, **빈 스크립트**를 차례로 선택합니다.
 
-14. 쿼리 창에 다음 코드를 입력합니다. 이 코드는 **HADOOP** 형식으로 작성되었으며 ****AzureStorageCredential을 사용하는 데이터 컨테이너 및 Blob Storage 계정용 외부 데이터 원본 **AzureStorage**를 생성합니다**. 위치 키의 **awdlsstudxx**를 귀하의 이니셜을 포함한 스토리지 계정과 바꿔야 합니다. 
+14. 쿼리 창에 다음 코드를 입력합니다. 이 코드는 **HADOOP** 형식으로 작성되었으며 **AzureStorageCredential을 사용하는 데이터 컨테이너 및 Blob Storage 계정용 외부 데이터 원본 **AzureStorage**를 생성합니다**. 위치 키의 **awdlsstudxx**를 귀하의 이니셜을 포함한 스토리지 계정과 바꿔야 합니다. 
 
     ```SQL
 	CREATE EXTERNAL DATA SOURCE AzureStorage

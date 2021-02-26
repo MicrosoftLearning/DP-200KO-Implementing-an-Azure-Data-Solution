@@ -148,7 +148,7 @@ AdventureWorks의 수석 데이터 엔지니어로서 귀하는 데이터 에스
 
 ### 작업 2: 데이터베이스 쿼리
 
-1. Azure Portal에서 **리소스 그룹**, awrgstudxx, sqlservicexx를 차례로 클릭하여 **AdventureworksLT(sqlservicekdwj/AdventureworksLT)**로 이동합니다.
+1. Azure Portal에서 **리소스 그룹**, awrgstudxx, sqlservicexx를 차례로 클릭하여 **AdventureworksLT(sqlservicekdwj/AdventureworksLT)** 로 이동합니다.
 
 2. **쿼리 편집기**로 이동합니다.
 
